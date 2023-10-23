@@ -1,0 +1,37 @@
+td.strong {
+    background: #ff9d9d !important;
+}
+
+.promo {
+  color: white;
+  background: rgb(5, 124, 79);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.pozor {
+  color: white;
+  background: rgb(206, 35, 29);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.bazar {
+  color: white;
+  background: rgb(255, 45, 255);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#main {
+  background: none !important;
+}
+
+body {
+  margin-left: 55px !important;
+  width: 90% !important;
+}
+
+.expedition__order {
+  page-break-inside: avoid !important;
+}

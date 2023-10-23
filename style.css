@@ -1,0 +1,17 @@
+.product-info .price span.tlama-price {
+	color: #0088bf;
+	font-size: 40px;
+	font-weight: bold;
+}
+.tlama-ean-code {
+	font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 12px;
+    background: #0088bf;
+	transition: background .5s;
+}
+.tlama-ean-code.uncopied {
+    background: #e26767;
+}
+
