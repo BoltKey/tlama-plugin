@@ -2403,7 +2403,7 @@ const productExport = {
 {name: 'Mnoho monster',manufacturer: 'Mindok',ean:'8595558301768'},'10155':
 {name: 'Plastový poøadaè - Super Box S',manufacturer: 'Ideal Box',ean:'8595585601060'},'10156':
 {name: 'Plastový poøadaè - Super Box M',manufacturer: 'Ideal Box',ean:'8595585601077'},'10157':
-{name: 'Plastový poøadaè - Ideal Box L',manufacturer: 'Ideal Box',ean:'8595585601084'},'10158':
+{name: 'Plastový poøadaè - Ideal Box L',manufacturer: 'Ideal Box',ean:'8595585601022'},'10158':
 {name: 'Plastový poøadaè - Ideal Box XL',manufacturer: 'Ideal Box',ean:'8595585600995'},'10159':
 {name: 'Mars: rozíøení 5 - Neklid',manufacturer: 'Mindok',ean:'8595558303663'},'10160':
 {name: '7 Wonders: Leaders',manufacturer: 'Repos',ean:'5425016920626'},'10161':
@@ -6936,7 +6936,7 @@ const productExport = {
 {name: 'Red Dragon Inn: Allies - Ozrik the Adept',manufacturer: 'Slug Fest Games',ean:'9780980209259'},'25869':
 {name: 'Labuníci',manufacturer: 'Blackfire CZ',ean:'nan'},'25870':
 {name: 'Paranormální detektivové',manufacturer: 'Blackfire CZ',ean:'nan'},'25871':
-{name: 'Komiks, v nìm jsi hrdinou - Rytíøi 2: Osudná zpráva',manufacturer: 'REXhry',ean:'9788027048137'},'25872':
+{name: 'Komiks, v nìm jsi hrdinou - Rytíøi 2: Osudná zpráva',manufacturer: 'REXhry',ean:'9788090802506'},'25872':
 {name: 'Pøíbìhy pirátù ZDARMA k objendávce her MINDOK 5000+ Kè',manufacturer: 'Mindok',ean:'8595558303229'},'25874':
 {name: 'Master of Orion ZDARMA k objednávce her MINDOK 1500-4999 Kè',manufacturer: 'Mindok',ean:'8595558302871'},'25875':
 {name: 'Farmáø Pepík ZDARMA k objednávce her MINDOK 500-1499 Kè',manufacturer: 'Mindok',ean:'8595558301935'},'25876':
@@ -20212,7 +20212,7 @@ const productExport = {
 {name: 'Pathfinder Flip-Mat: Rusthenge',manufacturer: 'Paizo Publishing',ean:'9781640785434'},'973C/M681':
 {name: 'Pathfinder Adventure: Rusthenge - EN',manufacturer: 'Paizo Publishing',ean:'9781640785427'},'973C/M682':
 {name: 'Pathfinder: Lost Omens Travel Guide  Special Edition - EN',manufacturer: 'Paizo Publishing',ean:'9781640785458'},'973C/M683':
-{name: 'Cyberpunk RED: Danger Gal Dossier - EN',manufacturer: 'R. Talsorian Games',ean:'nan'},'973C/M684':
+{name: 'Cyberpunk RED: Danger Gal Dossier - EN',manufacturer: 'R. Talsorian Games',ean:'9781950911295'},'973C/M684':
 {name: 'Root: Rozíøení Plenitelù',manufacturer: 'Fox in the Box',ean:'8594195400667'},'973C/M685':
 {name: 'Root: Mechanické rozíøení 2',manufacturer: 'Fox in the Box',ean:'8594195400674'},'973C/M686':
 {name: 'Root: Pomocníci Øíèního lidu',manufacturer: 'Fox in the Box',ean:'nan'},'973C/M687':
@@ -20395,4 +20395,18 @@ const productExport = {
 {name: 'Velká kvedlinburská - Inlay (èerná)',manufacturer: 'inserty.cz',ean:'nan'},'973C/M841':
 {name: 'Vlci - Inlay (èerná)',manufacturer: 'inserty.cz',ean:'nan'},'973C/M842':
 {name: 'Deep Rock Galactic (Deluxe edition) - Inlay (èerná)',manufacturer: 'inserty.cz',ean:'nan'},'973C/M843':
-{name: 'Pokémon TCG: Scarlet & Violet 151 - Elite Trainer Box',manufacturer: 'Nintendo',ean:'820650853159'},} }
+{name: 'Pokémon TCG: Scarlet & Violet 151 - Elite Trainer Box',manufacturer: 'Nintendo',ean:'820650853159'},'973C/M844':
+{name: 'Iron Maiden balíèek #1',manufacturer: 'Blackfire CZ',ean:'8595680302763'},'973C/M845':
+{name: 'Pokémon TCG: Scarlet & Violet 151 - Binder Collection',manufacturer: 'Nintendo',ean:'0820650853142'},'973C/M846':
+{name: 'Iron Maiden balíèek #2',manufacturer: 'Blackfire CZ',ean:'8595680302770'},'973C/M847':
+{name: 'Iron Maiden balíèek #3',manufacturer: 'Blackfire CZ',ean:'8595680302787'},'973C/M848':
+{name: 'Batman: Návrat Temného rytíøe - Deluxe edice',manufacturer: 'Blackfire CZ',ean:'8595680302589'},'973C/M849':
+{name: 'Hoï sebou, slepièí prdelko!',manufacturer: 'Blackfire CZ',ean:'0810083045580'},'973C/M850':
+{name: 'Pokémon TCG: Scarlet & Violet 151 - Poster Collection',manufacturer: 'Nintendo',ean:'0820650853166'},'973C/M851':
+{name: 'Pokémon TCG: September Pokeball Tin',manufacturer: 'Nintendo',ean:'0820650852756'},'973C/M852':
+{name: 'Chci zpátky své zoubky',manufacturer: 'Blackfire CZ',ean:'0810083045573'},'973C/M853':
+{name: 'Nejlepí nejhorí zmrzlina',manufacturer: 'Blackfire CZ',ean:'0810083045566'},'973C/M854':
+{name: 'SideQuest: 7th Sea',manufacturer: 'Board&Dice',ean:'6425453001550'},'973C/M855':
+{name: 'SideQuest: Nemesis',manufacturer: 'Board&Dice',ean:'6425453001574'},'30654L':
+{name: 'LEGO® Stíhaèka X-wing 30654',manufacturer: 'LEGO',ean:'673419377072'},'30325L':
+{name: 'LEGO® DUPLO Mùj první dinosaurus 30325',manufacturer: 'LEGO',ean:'nan'},} }
