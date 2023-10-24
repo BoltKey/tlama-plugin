@@ -64,7 +64,6 @@ function main() {
 
   let reals = loadReals();
   function addFancyColors(e) {
-    console.log("adding fancy to", e)
     const pattern = /^(\d+)\sks$/;
     const match = pattern.exec(e.children[0]?.innerHTML);
     if (match) {
@@ -88,7 +87,10 @@ function main() {
     addFancyColors(e);
   }
   let tables = document.querySelectorAll("table");
-  for (var e of tables[tables.length - 1].querySelectorAll("td")) {
+  let lastTable = tables[tables.length - 1].querySelector("tbody");
+
+  console.log(lastTable)
+  for (var e of lastTable.querySelectorAll("td")) {
     let colors = {
       1: "#ffffbb",
       2: "#ffff99",
@@ -103,6 +105,31 @@ function main() {
       }
     }
     addFancyColors(e);
+  }
+  let children = Array.from(lastTable.children);
+  let newChildren = children.sort((a, b) => {
+    let aColor = a.children[0].style.backgroundColor;
+    let bColor = b.children[0].style.backgroundColor
+    if (!aColor && !bColor) {
+      return 0;
+    }
+    if (!aColor) {
+      return 1;
+    }
+    if (!bColor) {
+      return -1;
+    }
+    if (aColor > bColor) {
+      return 1;
+    }
+    if (aColor < bColor) {
+      return -1;
+    }
+    return 0;
+  })
+  lastTable.innerHTML = ""
+  for (let c of newChildren) {
+    lastTable.appendChild(c);
   }
 }
 function addManufacturers() {
@@ -350,7 +377,7 @@ const productExport = {
 {name: 'Dixit 5 - Daydreams',manufacturer: 'Blackfire CZ',ean:'3558380024361'},'1088':
 {name: 'Dixit 6 - Memories',manufacturer: 'Blackfire CZ',ean:'3558380031338'},'1089':
 {name: 'Dixit 7 - Revelations',manufacturer: 'Blackfire CZ',ean:'3558380041009'},'1090':
-{name: 'Dixit 8 - Harmonies',manufacturer: 'Blackfire CZ',ean:'3558380031338'},'1091':
+{name: 'Dixit 8 - Harmonies',manufacturer: 'Blackfire CZ',ean:'3558380049203'},'1091':
 {name: 'Dixit 9 - 10th Anniversary',manufacturer: 'Blackfire CZ',ean:'3558380069430'},'1093':
 {name: 'Carcassonne 2. edice: Mosty a hrady',manufacturer: 'Mindok',ean:'8595558300679'},'1094':
 {name: 'Carcassonne 2. edice: Ovce a kopce',manufacturer: 'Mindok',ean:'8595558301614'},'1095':
@@ -7066,7 +7093,7 @@ const productExport = {
 {name: 'Tik Tak Bum Family',manufacturer: 'Piatnik',ean:'9001890799099'},'26965':
 {name: 'Tatamokatsu - samurajské kostky',manufacturer: 'Helvetiq',ean:'7640139532602'},'26966':
 {name: 'My Farm Shop',manufacturer: 'Pegasus Spiele',ean:'4250231717871'},'26967':
-{name: '5 Minute Dungeon: Curses! Foiled Again!',manufacturer: 'Wiggles 3D',ean:'824284500106'},'26968':
+{name: '5 Minute Dungeon: Curses! Foiled Again!',manufacturer: '3D Wiggles',ean:'824284500106'},'26968':
 {name: 'White Dwarf Issue 459 (12/2020)',manufacturer: 'Games Workshop',ean:'nan'},'26969':
 {name: 'Hostage Negotiator: Abductor Pack 1',manufacturer: 'Van Ryder Games',ean:'852665454892'},'26971':
 {name: 'Hostage Negotiator: Abductor Pack 10',manufacturer: 'Van Ryder Games',ean:'682863714364'},'26972':
@@ -10764,7 +10791,7 @@ const productExport = {
 {name: 'Doctor Who: Time of the Daleks - 5th & 10th Doctors',manufacturer: 'Gale Force Nine',ean:'9781945625114'},'44169':
 {name: 'Krev a písek',manufacturer: 'Oook!game',ean:'8594168800012'},'44170':
 {name: 'Circus Abracadabra',manufacturer: 'Oook!game',ean:'8594168800036'},'44171':
-{name: 'Bílá opice',manufacturer: 'Oook!game',ean:'8594168800029'},'44172':
+{name: 'Bílá opice',manufacturer: 'Oook!game',ean:'8594168800036'},'44172':
 {name: 'Strácové lesa',manufacturer: 'Mindok',ean:'8595558304530'},'44173':
 {name: 'Amazonie',manufacturer: 'Mindok',ean:'8595558304547'},'44174':
 {name: 'Dungeons & Dragons: Warriors & Weapons',manufacturer: 'Wizards of the Coast',ean:'9781984856425'},'44175':
@@ -14772,7 +14799,7 @@ const productExport = {
 {name: 'Planet B - DE',manufacturer: 'Asmodee DE',ean:'4015566018655'},'93082':
 {name: 'Hamlet: The Village Building Game - EN',manufacturer: 'Mighty Boards',ean:'5350705999938'},'93083':
 {name: 'Frostpunk: The Board Game  Frostlander Expansion - EN',manufacturer: 'Rebel',ean:'5904292004010'},'93084':
-{name: 'Frostpunk: The Board Game - EN',manufacturer: 'Rebel',ean:'5904292004003'},'93085':
+{name: 'Frostpunk: The Board Game - EN',manufacturer: 'Glass Cannon Unplugged',ean:'5904292004003'},'93085':
 {name: 'Frostpunk: The Board Game - Playmat',manufacturer: 'Glass Cannon Unplugged',ean:'5904292004065'},'93086':
 {name: 'Frostpunk: The Board Game - Timber City Expansion',manufacturer: 'Glass Cannon Unplugged',ean:'nan'},'93087':
 {name: 'Frostpunk: The Board Game - Dreadnought Miniature',manufacturer: 'Glass Cannon Unplugged',ean:'5904292004041'},'93088':
@@ -20319,7 +20346,7 @@ const productExport = {
 {name: 'Warhammer 40.000: T\'au Empire Commander',manufacturer: 'Games Workshop',ean:'5011921170005'},'973C/M779':
 {name: 'Age of Sigmar: Chaos Warriors',manufacturer: 'Games Workshop',ean:'5011921165506'},'973C/M780':
 {name: 'Age of Sigmar: Mournfang Pack',manufacturer: 'Games Workshop',ean:'5011921189076'},'973C/M781':
-{name: 'Age of Sigmar: Dankhold Troggoth',manufacturer: 'Games Workshop',ean:'5011921170258'},'973C/M782':
+{name: 'Age of Sigmar: Dankhold Troggoth',manufacturer: 'Games Workshop',ean:'5011921170258'},'6017':
 {name: 'astné mìsteèko',manufacturer: 'Blackfire CZ',ean:'8595680302824'},'973C/M783':
 {name: 'Age of Sigmar: Ogroid Theridons',manufacturer: 'Games Workshop',ean:'5011921165483'},'973C/M784':
 {name: 'Pojïme se uèit: kolní den',manufacturer: 'Blackfire CZ',ean:'6416739596167'},'973C/M785':
@@ -20395,18 +20422,28 @@ const productExport = {
 {name: 'Velká kvedlinburská - Inlay (èerná)',manufacturer: 'inserty.cz',ean:'nan'},'973C/M841':
 {name: 'Vlci - Inlay (èerná)',manufacturer: 'inserty.cz',ean:'nan'},'973C/M842':
 {name: 'Deep Rock Galactic (Deluxe edition) - Inlay (èerná)',manufacturer: 'inserty.cz',ean:'nan'},'973C/M843':
-{name: 'Pokémon TCG: Scarlet & Violet 151 - Elite Trainer Box',manufacturer: 'Nintendo',ean:'820650853159'},'973C/M844':
+{name: 'Pokémon TCG: Scarlet & Violet 151 - Elite Trainer Box',manufacturer: 'Nintendo',ean:'820650853159'},'6013':
 {name: 'Iron Maiden balíèek #1',manufacturer: 'Blackfire CZ',ean:'8595680302763'},'973C/M845':
-{name: 'Pokémon TCG: Scarlet & Violet 151 - Binder Collection',manufacturer: 'Nintendo',ean:'0820650853142'},'973C/M846':
-{name: 'Iron Maiden balíèek #2',manufacturer: 'Blackfire CZ',ean:'8595680302770'},'973C/M847':
+{name: 'Pokémon TCG: Scarlet & Violet 151 - Binder Collection',manufacturer: 'Nintendo',ean:'0820650853142'},'6014':
+{name: 'Iron Maiden balíèek #2',manufacturer: 'Blackfire CZ',ean:'8595680302770'},'6015':
 {name: 'Iron Maiden balíèek #3',manufacturer: 'Blackfire CZ',ean:'8595680302787'},'973C/M848':
-{name: 'Batman: Návrat Temného rytíøe - Deluxe edice',manufacturer: 'Blackfire CZ',ean:'8595680302589'},'973C/M849':
+{name: 'Batman: Návrat Temného rytíøe - Deluxe edice',manufacturer: 'Blackfire CZ',ean:'8595680302589'},'6011':
 {name: 'Hoï sebou, slepièí prdelko!',manufacturer: 'Blackfire CZ',ean:'0810083045580'},'973C/M850':
 {name: 'Pokémon TCG: Scarlet & Violet 151 - Poster Collection',manufacturer: 'Nintendo',ean:'0820650853166'},'973C/M851':
-{name: 'Pokémon TCG: September Pokeball Tin',manufacturer: 'Nintendo',ean:'0820650852756'},'973C/M852':
-{name: 'Chci zpátky své zoubky',manufacturer: 'Blackfire CZ',ean:'0810083045573'},'973C/M853':
+{name: 'Pokémon TCG: September Pokeball Tin',manufacturer: 'Nintendo',ean:'0820650852756'},'6012':
+{name: 'Chci zpátky své zoubky',manufacturer: 'Blackfire CZ',ean:'0810083045573'},'6016':
 {name: 'Nejlepí nejhorí zmrzlina',manufacturer: 'Blackfire CZ',ean:'0810083045566'},'973C/M854':
 {name: 'SideQuest: 7th Sea',manufacturer: 'Board&Dice',ean:'6425453001550'},'973C/M855':
 {name: 'SideQuest: Nemesis',manufacturer: 'Board&Dice',ean:'6425453001574'},'30654L':
 {name: 'LEGO® Stíhaèka X-wing 30654',manufacturer: 'LEGO',ean:'673419377072'},'30325L':
-{name: 'LEGO® DUPLO Mùj první dinosaurus 30325',manufacturer: 'LEGO',ean:'nan'},} }
+{name: 'LEGO® DUPLO Mùj první dinosaurus 30325',manufacturer: 'LEGO',ean:'nan'},'30391L':
+{name: 'LEGO® Locika a loïka s lucernou 30391',manufacturer: 'LEGO',ean:'nan'},'30640L':
+{name: 'LEGO® Závodní auto 30640',manufacturer: 'LEGO',ean:'nan'},'30640L2':
+{name: 'LEGO® Spoleèenská hra Creationary',manufacturer: 'LEGO',ean:'nan'},'973C/M856':
+{name: 'Ruleta set',manufacturer: 'MAC TOYS',ean:'8590439050308'},'973C/M857':
+{name: 'Night Parade of a Hundred Yokai + Expansions Insert',manufacturer: 'Poland Games',ean:'5905358892541'},'973C/M858':
+{name: 'Keep the Heroes Out + Expansions Insert',manufacturer: 'Poland Games',ean:'5905358892534'},'973C/M859':
+{name: 'Evacuation',manufacturer: 'Delicious Games',ean:'nan'},'973C/M860':
+{name: 'Shipyard (2nd edition)',manufacturer: 'Delicious Games',ean:'nan'},'973C/M861':
+{name: 'Underwater Cities: Mini-expansion',manufacturer: 'Delicious Games',ean:'nan'},'973C/M862':
+{name: 'Shipyard - wooden components',manufacturer: 'Delicious Games',ean:'nan'},} }
