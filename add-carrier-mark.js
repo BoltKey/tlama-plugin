@@ -83,14 +83,7 @@ function main() {
     e.innerHTML = e.innerHTML.replace("POZOR", "<span class='pozor'>POZOR</span>")
     e.innerHTML = e.innerHTML.replace("Bazar", "<span class='bazar'>Bazar</span>")
   }
-  for (var e of document.querySelectorAll(".expedition__orderContent tbody td")) {
-    addFancyColors(e);
-  }
-  let tables = document.querySelectorAll("table");
-  let lastTable = tables[tables.length - 1].querySelector("tbody");
-
-  console.log(lastTable)
-  for (var e of lastTable.querySelectorAll("td")) {
+  function addStorageColors(e) {
     let colors = {
       1: "#ffffbb",
       2: "#ffff99",
@@ -104,6 +97,17 @@ function main() {
         colors[stockNumber], "important");
       }
     }
+  }
+  for (var e of document.querySelectorAll(".expedition__orderContent tbody td")) {
+    addFancyColors(e);
+    addStorageColors(e)
+  }
+  let tables = document.querySelectorAll("table");
+  let lastTable = tables[tables.length - 1].querySelector("tbody");
+
+  console.log(lastTable)
+  for (var e of lastTable.querySelectorAll("td")) {
+    addStorageColors(e)
     addFancyColors(e);
   }
   let children = Array.from(lastTable.children);
