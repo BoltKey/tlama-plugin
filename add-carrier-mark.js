@@ -90,7 +90,9 @@ function main() {
       "pozice ve skladu: 3": "#ffddbb",
       "pozice ve skladu: 4": "#ffdd99",
       "pozice ve skladu: novinky": "#ddddff",
-      "army painter": "#bdb76b"
+      "výrobce: army painter": "#bdb76b",
+      "výrobce: citadel": "#bdb76b",
+      "výrobce: games workshop": "#bdb76b",
     }
     for (let stockNumber in colors) {
       if (e.innerHTML.toLowerCase().includes(stockNumber)) {
