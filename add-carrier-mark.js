@@ -85,14 +85,15 @@ function main() {
   }
   function addStorageColors(e) {
     let colors = {
-      1: "#ffffbb",
-      2: "#ffff99",
-      3: "#ffddbb",
-      4: "#ffdd99",
-      "novinky": "#ddddff"
+      "pozice ve skladu: 1": "#ffffbb",
+      "pozice ve skladu: 2": "#ffff99",
+      "pozice ve skladu: 3": "#ffddbb",
+      "pozice ve skladu: 4": "#ffdd99",
+      "pozice ve skladu: novinky": "#ddddff",
+      "army painter": "#bdb76b"
     }
     for (let stockNumber in colors) {
-      if (e.innerHTML.toLowerCase().includes("pozice ve skladu: " + stockNumber)) {
+      if (e.innerHTML.toLowerCase().includes(stockNumber)) {
         e.parentElement.children[0].style.setProperty("background-color",
         colors[stockNumber], "important");
       }
