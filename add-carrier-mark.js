@@ -2,7 +2,7 @@ var logoUrls = {
   "Z": "https://www.agionet.cz/media/k2/items/cache/zasilkovna_logo-banner-900px_XL.jpg",
   "D": "https://pbs.twimg.com/profile_images/1388149186802208776/kARKF09k_400x400.png",
   "G": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Logo-GLS-1080x1080px.svg/1024px-Logo-GLS-1080x1080px.svg.png",
-  "B": "https://www.kralovstvi-tiande.cz/files/thumbs/spojili_jsme_sily_s_balikovnou-_co_z_toho_plyne_pro_vas-/img-balikovna-logo2x.2660107650.jpg",
+  "B": "https://pbs.twimg.com/profile_images/1331256080022859779/w5PIaybZ_400x400.jpg",
   "P": "https://1gr.cz/fotky/idnes/13/081/cl5/VSE4d167e_CPlogo.jpg",
   "PPL": "https://www.eman.cz/wp-content/uploads/2020/11/logo_ppl.png"
 }
