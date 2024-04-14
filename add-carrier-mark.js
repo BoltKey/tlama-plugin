@@ -85,15 +85,16 @@ function main() {
   }
   function addStorageColors(e) {
     let colors = {
-      "00": "#c8a1ff",
-      "01": "#a1acff",
-      "03": "#a1ffd6",
-      "04": "#d2ffa1",
-      "05": "#ffe8a1",
-      "pozice ve skladu: 1": "#ffffbb",
-      "pozice ve skladu: 2": "#ffff99",
-      "pozice ve skladu: 3": "#ffddbb",
-      "pozice ve skladu: 4": "#ffdd99",
+
+
+
+
+
+      "pozice ve skladu: 00": "#c8a1ff",
+      "pozice ve skladu: 01": "#a1acff",
+      "pozice ve skladu: 03": "#a1ffd6",
+      "pozice ve skladu: 04": "#d2ffa1",
+      "pozice ve skladu: 05": "#ffe8a1",
       "pozice ve skladu: novinky": "#ddddff",
       "výrobce: army painter": "#bdb76b",
       "výrobce: citadel": "#bdb76b",
