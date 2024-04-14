@@ -85,6 +85,11 @@ function main() {
   }
   function addStorageColors(e) {
     let colors = {
+      "00": "#c8a1ff",
+      "01": "#a1acff",
+      "03": "#a1ffd6",
+      "04": "#d2ffa1",
+      "05": "#ffe8a1",
       "pozice ve skladu: 1": "#ffffbb",
       "pozice ve skladu: 2": "#ffff99",
       "pozice ve skladu: 3": "#ffddbb",
