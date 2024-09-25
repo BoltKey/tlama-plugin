@@ -82,7 +82,7 @@ function createAgreement() {
 	var d = newWindow.document;
 	var address = document.querySelector("#billing-address span").innerHTML;
 	d.getElementById("customer-info").innerHTML = address;
-	var items = document.querySelectorAll("#t1 .v2tableWrapper tbody tr:not(.hidden)");
+	var items = document.querySelectorAll("#t1 .tableWrapper tbody tr:not(.hidden)");
 	console.log(items);
 	var i = 0;
 	for (var item of items) {
