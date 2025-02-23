@@ -1,9 +1,13 @@
 {
   "manifest_version": 3,
-
   "name": "Tlama Games plugin",
   "version": "0.2.1",
   "description": "Internal plugin for Tlama Games operations.",
+  "host_permissions": [
+    "https://shop.frontdepot.com/*",
+    "https://b2b.pegasusshop.de/*",
+    "https://www.epn-europe.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
