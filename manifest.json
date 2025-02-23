@@ -4,7 +4,9 @@
   "name": "Tlama Games plugin",
   "version": "0.2.1",
   "description": "Internal plugin for Tlama Games operations.",
-
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [{
     "css": ["style.css"],
     "js": ["add_price.js"],
@@ -19,6 +21,10 @@
   {
     "js": ["pujcovna-button.js"],
     "matches": ["https://www.tlamagames.com/admin/objednavky-detail/*"]
+  },
+  {
+    "js": ["scrape_vendors.js"],
+    "matches": ["https://www.tlamagames.com/admin/produkty-detail/*"]
   }
   ]
 
