@@ -116,11 +116,13 @@ async function updateVendorData(vendorId, productName, EAN) {
             }
           );
         } else {
-          tlamaStockElement.innerHTML = "Not found"
-          tlamaStockElement.innerHTML = "Not found"
           if (productName) {
             // try again with board game name
             updateVendorData(vendorId, undefined, productName)
+          }
+          else {
+            tlamaStockElement.innerHTML = "Not found"
+            tlamaStockElement.innerHTML = "Not found"
           }
           console.error("Unexpected response format or missing Url property for:", vendorId, response.data);
         }
