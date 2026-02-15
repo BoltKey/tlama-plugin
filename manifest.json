@@ -11,25 +11,35 @@
   "background": {
     "service_worker": "background.js"
   },
-  "content_scripts": [{
-    "css": ["style.css"],
-    "js": ["add_price.js"],
-    "matches": ["https://www.blackfire.eu/*", "https://webshopnl.asmodee.com/*", "https://pegasusshop.de/*"]
-  },
-  {
-    "css": ["style-strong.css"],
-    "js": ["add-carrier-mark.js"],
-    "all_frames": true,
-    "matches": ["https://www.tlamagames.com/admin/action/DocumentPrint/MassPrint/*"]
-  },
-  {
-    "js": ["pujcovna-button.js"],
-    "matches": ["https://www.tlamagames.com/admin/objednavky-detail/*"]
-  },
-  {
-    "js": ["scrape_vendors.js"],
-    "matches": ["https://www.tlamagames.com/admin/produkty-detail/*"]
-  }
+  "content_scripts": [
+    {
+      "css": ["style.css"],
+      "js": ["add_price.js"],
+      "matches": [
+        "https://www.blackfire.eu/*",
+        "https://webshopnl.asmodee.com/*",
+        "https://pegasusshop.de/*"
+      ]
+    },
+    {
+      "css": ["style-strong.css"],
+      "js": ["add-carrier-mark.js"],
+      "all_frames": true,
+      "matches": [
+        "https://www.tlamagames.com/admin/action/DocumentPrint/MassPrint/*"
+      ]
+    },
+    {
+      "js": ["pujcovna-button.js"],
+      "matches": ["https://www.tlamagames.com/admin/objednavky-detail/*"]
+    },
+    {
+      "js": ["scrape_vendors.js"],
+      "matches": ["https://www.tlamagames.com/admin/produkty-detail/*"]
+    },
+    {
+      "js": ["email_outofstock.js"],
+      "matches": ["https://www.tlamagames.com/admin/produkty-detail/*"]
+    }
   ]
-
 }
