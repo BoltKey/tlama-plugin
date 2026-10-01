@@ -2,9 +2,33 @@ function main() {
   var button = document.createElement("button");
   button.className = "btn btn-md btn-default dropdown-trigger pujcovna-button";
   button.style["margin-left"] = "5px";
-  button.innerHTML = "Poslání email o dostupnosti";
+  button.innerHTML = "Zkopírovat adresy pro email o nedostupnosti";
   document.querySelector(".content-buttons").appendChild(button);
   button.addEventListener("click", sendEmail);
+}
+
+function showPopup(message) {
+  const button = document.querySelector(".pujcovna-button");
+  if (!button) return;
+
+  document.querySelector(".email-outofstock-popup")?.remove();
+  const popup = document.createElement("div");
+  popup.className = "email-outofstock-popup";
+  popup.textContent = message;
+  Object.assign(popup.style, {
+    position: "fixed",
+    left: `${button.getBoundingClientRect().left}px`,
+    top: `${button.getBoundingClientRect().bottom + 6}px`,
+    zIndex: "99999",
+    padding: "8px 12px",
+    background: "#333",
+    color: "#fff",
+    borderRadius: "4px",
+    fontSize: "13px",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)",
+  });
+  document.body.appendChild(popup);
+  setTimeout(() => popup.remove(), 3000);
 }
 
 async function sendEmail() {
@@ -106,7 +130,7 @@ async function sendEmail() {
     document.querySelector("select[name='availabilityId'] option:checked")
       ?.innerHTML ?? "";
   if (availableAmt <= 0) {
-    alert(
+    showPopup(
       "Produkt je skladem v dostatečném množství, není potřeba posílat email.",
     );
     return;
@@ -145,7 +169,7 @@ async function sendEmail() {
   // sleep to flush the UI and show the alert before sending emails
   setTimeout(() => {
     if (recipients.length === 0) {
-      alert("Nenalezen žádný email pro zaslání upozornění.");
+      showPopup("Nenalezen žádný email pro zaslání upozornění.");
       return;
     }
     const subject = `TLAMA games - Položka ${productName} změnila dostupnost na ${availabilityOnSoldOut}`;
@@ -158,7 +182,12 @@ Tým TLAMA games`;
       subject,
     )}&to=info@tlamagames.com&bcc=${encodeURIComponent(recipientList)}&body=${encodeURIComponent(body)}`;
     // open in new tab to avoid losing the current page
-    window.open(mailtoLink, "_blank");
+    //window.open(mailtoLink, "_blank");
+    // put recipient list into clipboard
+    navigator.clipboard.writeText(recipientList).then(
+      () => showPopup("Seznam příjemců byl zkopírován do schránky."),
+      () => showPopup("Nepodařilo se zkopírovat seznam příjemců do schránky."),
+    );
   }, 200);
 }
 
